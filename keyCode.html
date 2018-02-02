@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Key Code Application</title>
+</head>
+<body>
+	<p>on key up | on key down</p>
+	<div>
+		<p>Key Pressed: <span id="kp"></span></p>
+		<p>Key Code: <span id="kc"></span></p>
+		<p id="status">Keyboard Event Status: </p>
+	</div>
+<script type="text/javascript">
+	document.onkeydown = function(event) {
+		var key_pressed = String.fromCharCode(event.keyCode);
+		var key_code = event.keyCode;
+		document.getElementById('kp').innerHTML = key_pressed;
+		document.getElementById('kc').innerHTML = key_code;
+		document.getElementById('status').innerHTML = "DOWN event fired on key " + key_pressed;
+	}
+	document.onkeyup = function(event) {
+		var key_pressed = String.fromCharCode(event.keyCode);
+		document.getElementById('status').innerHTML = "UP event fired on " + key_pressed;
+	}
+</script>
+</body>
+</html>
